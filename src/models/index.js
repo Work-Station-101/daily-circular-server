@@ -1,4 +1,5 @@
-const mongoose = require('mongoose');
-const { circularSchema } = require('./circular')
+const Circular = require('./Circluar');
 
-const Circular = mongoose.model('Circular', circularSchema);
+module.exports = {
+  Circular,
+};

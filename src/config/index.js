@@ -1,12 +1,16 @@
 const port = 5000;
 const host = '0.0.0.0';
+const mongodbUser = 'root';
+const mongodbPassword = '1234';
+const mongodbContainerName = 'dc-mongodb';
+const mongodbPort = 27017;
 
 const config = {
   server: {
     port,
     host,
   },
-  mongodb: 'mongodb://dc-mongodb:27017/daily-circular',
+  mongodb: `mongodb://${mongodbContainerName}:${mongodbPort}/daily-circular`,
 };
 
 module.exports = config;
