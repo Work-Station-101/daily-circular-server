@@ -2,10 +2,11 @@ const port = 5000;
 const host = '0.0.0.0';
 
 const config = {
-  app: {
+  server: {
     port,
     host,
   },
+  mongodb: 'mongodb://dc-mongodb:27017/daily-circular',
 };
 
 module.exports = config;
