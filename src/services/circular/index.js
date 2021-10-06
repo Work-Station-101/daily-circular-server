@@ -1,14 +1,14 @@
-const { Circular } = require('../../models');
+'use strict';
 
-const circularDoc = new Circular();
+const { Circular } = require('../../models');
 
 const createOrUpdateCircular = async (req, res, next) => {
   try {
-    const response = await circularDoc.save(req.body);
+    const circularDoc = new Circular(req.body);
+    const response = await circularDoc.save();
     res.status(201);
     res.send(response);
-  }
-  catch (err) {
+  } catch (err) {
     next(err);
   }
 }

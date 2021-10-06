@@ -1,3 +1,5 @@
+'use strict';
+
 const mongoose = require('mongoose');
 
 const circularSchema = new mongoose.Schema({
@@ -17,4 +19,5 @@ const circularSchema = new mongoose.Schema({
 });
 
 const Circular = mongoose.model('Circular', circularSchema);
+
 module.exports = Circular;
