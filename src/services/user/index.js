@@ -19,7 +19,23 @@ const getUserByEmail = async (req, res) => {
   res.send(response);
 };
 
+const authenticate = async (req, res) => {
+  const response = await User.findOne({ 'email': req.body.email}).exec();
+  const user = response._doc;
+  if (user && user.password === req.body.password) {
+    res.status(200);
+    res.send({
+      ...user,
+      password: '----',
+    });
+  } else {
+    res.status(400);
+    res.send(null);
+  }
+};
+
 module.exports = {
+  authenticate,
   createOrUpdateUser,
   getUserByEmail,
 }
