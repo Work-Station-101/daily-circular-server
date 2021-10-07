@@ -13,6 +13,13 @@ const createOrUpdateCircular = async (req, res, next) => {
   }
 }
 
+const getCirculars = async (req, res) => {
+  const circulars = await Circular.find().sort({ createdAt: 'desc' });
+  res.status(200);
+  res.send(circulars);
+};
+
 module.exports = {
   createOrUpdateCircular,
+  getCirculars,
 }
