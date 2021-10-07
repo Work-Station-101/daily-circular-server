@@ -10,6 +10,8 @@ const circularSchema = new mongoose.Schema({
   comments: [{ body: String, date: Date }],
   deleted: { type: Boolean, default: false },
   createdAt: { type: Date, default: Date.now },
+  creatorGUID: { type: String },
+  createdBy: { type: Object },
   meta: {
     views: { type: Number, default: 0 },
     likes: { type: Number, default: 0 },

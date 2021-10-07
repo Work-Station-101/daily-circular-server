@@ -6,5 +6,6 @@ const circular = require('./api/circular');
 
 routes.use('/api/user', user);
 routes.use('/api/circular', circular);
+routes.use('/api/circular/:userGUID', circular);
 
 module.exports = routes;

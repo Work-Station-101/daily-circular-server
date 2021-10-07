@@ -19,7 +19,14 @@ const getCirculars = async (req, res) => {
   res.send(circulars);
 };
 
+const getCircularsByUserGUID = async (req, res) => {
+  const circulars = await Circular.find({'creatorGUID': req.params.userGUID}).sort({ createdAt: 'desc' });
+  res.status(200);
+  res.send(circulars);
+};
+
 module.exports = {
   createOrUpdateCircular,
   getCirculars,
+  getCircularsByUserGUID,
 }
